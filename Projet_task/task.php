@@ -76,7 +76,7 @@ if(isset($_POST['addTask'])){
 $data = readTasksByUser($bdd,$_SESSION['id']);
 
 //3) Comme je reçois un tableau de Task, traiter le tableau avec une boucle pour générer un affichage (card Task) à mettre dans $todoList
-foreach($data as $task){
+foreach($data as $task){//Prends chaque élément du tableau $data et mets-le dans la variable $task”
     $todoList = $todoList."<article>
         <h3> {$task['name_task']} </h3>
         <h4> DATE : {$task['date_task']} </h4>

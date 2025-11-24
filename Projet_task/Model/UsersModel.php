@@ -14,7 +14,7 @@ class Users {
     public function __construct(?PDO $bdd,?string $nickname = '',?string $email =''){
         $this->bdd = $bdd;
         $this->nickname = $nickname;
-        $this->$email = $email;
+        $this->email = $email;
     }
 
     //GETTER ET SETTER
@@ -145,7 +145,7 @@ class Users {
 
             $firstname = $this->getFirstname();
             $lastname = $this->getLastname();
-            $id = $this->getId();
+            $id_user = $this->getIdUser();
             //Binding de Paramètre
             $req->bindParam(1,$firstname,PDO::PARAM_STR);
             $req->bindParam(2,$lastname,PDO::PARAM_STR);

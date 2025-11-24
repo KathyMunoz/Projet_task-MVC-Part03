@@ -48,7 +48,8 @@ if(isset($_POST['signIn'])){
                     //$data vide -> signifie que nickname et email sont dispo
                     // Lance le try... catch d'inscription
                     // Try... Catch : nous permet de gérer les erreurs de communication avec la BDD et de requête envoyée à la BDD
-                    $data = createUser($bdd,$nickname,$email,$password);
+                    $user = new Users($bdd,$nickname,$email,$password);
+                    $data = $user->createUser();
 
                     //$data = [
                     //          '$data' => [tab de reponse de la bdd],

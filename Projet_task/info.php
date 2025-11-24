@@ -23,7 +23,9 @@ if(isset($_POST['update'])){
     //Création de l'objet de connexion
     $bdd = new PDO('mysql:host=localhost;dbname=task','root','root',array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
 
-    updateUser($bdd,$firstname,$lastname,$_SESSION['id']);
+   
+    $user = new Users($bdd,$firstname,$lastname,$_SESSION['id']);
+    $data = $user->updateUser();
 }
 
 include './View/header.php';
